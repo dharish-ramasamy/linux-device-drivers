@@ -1,4 +1,4 @@
-obj-m := module.o
+obj-m := q2.o
 
 KERNSRC := /lib/modules/$(shell uname -r)/build
 
@@ -7,7 +7,7 @@ PWD := $(shell pwd)
 modules:
 	make -C $(KERNSRC) M=$(PWD) modules
 
-modules_install:
+module_install:
 	make -C $(KERNSRC) M=$(PWD) modules_install
 	depmod -a
 
