@@ -1,3 +1,8 @@
+/*
+* Q2) Explore module_param() macro and Write simple add module which takes two parameters
+*     at load time and prints the sum.
+*/
+
 #include<linux/init.h>
 #include<linux/module.h>
 #include<linux/moduleparam.h>
