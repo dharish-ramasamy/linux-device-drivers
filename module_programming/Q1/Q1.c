@@ -1,5 +1,5 @@
 /* 
- * Q2).
+ * Q1).
  *
  * Write a simple module which would print “I am in init module…” when
  * module is inserted & “I am in cleanup module…” when module is removed?
