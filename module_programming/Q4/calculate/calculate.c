@@ -1,9 +1,16 @@
+/*
+ *Q4) Explore EXPORT_SYMBOL() macro and write simple module dependency program in which
+ *    one module implements functionality of add, sub, mul, div and avg operations of two integers
+ *    and another module calls these functionalities.
+ *
+ */
+
 #include<linux/init.h>
 #include<linux/module.h>
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("DHARISH");
-MODULE_DESCRIPTION("User Module");
+MODULE_DESCRIPTION("Calculate Module to perform add, sub, mul, div and average");
 
 extern int add( int, int );
 extern int sub( int, int );
@@ -16,7 +23,7 @@ int a, b;
 module_param(a, int, S_IRUGO);
 module_param(b, int, S_IRUGO);
 
-static int __init initial(void)
+static int __init insert_calculate_module(void)
 {
     printk("Calculete Module inserted..\n");
     printk("ADD : %d\n", add(a,b));
@@ -27,10 +34,10 @@ static int __init initial(void)
     return 0;
 }
 
-static void __exit removed(void)
+static void __exit remove_calculate_module(void)
 {
     printk("Calculate Module removed..\n");
 }
 
-module_init(initial);
-module_exit(removed);
+module_init(insert_calculate_module);
+module_exit(remove_calculate_module);
