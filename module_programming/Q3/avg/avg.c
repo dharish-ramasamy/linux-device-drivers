@@ -1,3 +1,8 @@
+/*
+ *Q3) Explore EXPORT_SYMBOL() macro and write simple module dependency program in which
+ *    avg module is dependent on add module.
+ */
+
 #include<linux/init.h>
 #include<linux/module.h>
 
@@ -12,17 +17,17 @@ module_param(b, int, S_IRUGO);
 
 extern int add( int , int );
 
-static int __init avg_insert(void)
+static int __init insert_avg_module(void)
 {
     printk("Average Module Inserted...\n");
     printk("Average is %d.\n", (add(a, b)/2));
     return 0;
 }
 
-static void __exit avg_removed(void)
+static void __exit remove_avg_module(void)
 {
     printk("Average module removed..\n");
 }
 
-module_init(avg_insert);
-module_exit(avg_removed);
+module_init(insert_avg_module);
+module_exit(remove_avg_module);
