@@ -1,4 +1,4 @@
-obj-m := Q1.o
+obj-m := simple_module.o
 
 KERNSRC := /lib/modules/$(shell uname -r)/build
 
