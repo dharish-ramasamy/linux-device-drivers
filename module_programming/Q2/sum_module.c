@@ -16,18 +16,18 @@ int a, b;
 module_param( a, int, S_IRUGO );
 module_param( b, int, S_IRUGO );
 
-static int __init initial(void)
+static int __init insert_module(void)
 {
     printk("Module Inserted...\n");
     printk("SUM : %d\n", a+b);
     return 0;
 }
 
-static void __exit end(void)
+static void __exit remove_module(void)
 {
     printk("Module Removed...\n");
 }
 
-module_init(initial);
-module_exit(end);
+module_init(insert_module);
+module_exit(remove_module);
 

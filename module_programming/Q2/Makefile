@@ -1,4 +1,4 @@
-obj-m := q2.o
+obj-m := sum_module.o
 
 KERNSRC := /lib/modules/$(shell uname -r)/build
 
