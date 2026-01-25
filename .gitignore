@@ -6,3 +6,9 @@
 *.symvers
 modules.order
 *.cmd
+
+# User-space build artifacts
+a.out
+*.o
+*.out
+*.elf
