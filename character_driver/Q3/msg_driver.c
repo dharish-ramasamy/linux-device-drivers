@@ -44,7 +44,7 @@ struct file_operations fops = {
 
 static int __init insert_module(void)
 {
-    printk("Message_driver got opened..\n");
+    printk("Message driver module inserted..\n");
     int res;
 
     res = alloc_chrdev_region(&dev_num, 0, 1, "msg_driver");
@@ -72,7 +72,7 @@ static int __init insert_module(void)
 
 static int driver_open(struct inode *inode, struct file *file)
 {
-    printk("Message_driver got opened..\n");
+    printk("Message driver module opened..\n");
     return 0;
 }
 
@@ -150,13 +150,13 @@ static ssize_t driver_write(struct file *file, const char __user *buf, size_t co
 
 static int driver_close(struct inode *inode, struct file *file)
 {
-    printk("Message_driver got closed..\n");
+    printk("Message driver module closed..\n");
     return 0;
 }
 
 static void __exit remove_module(void)
 {
-    printk("Message_driver got removed..\n");
+    printk("Message driver module removed..\n");
     device_destroy(myclass, dev_num);
     class_destroy(myclass);
     unregister_chrdev_region(dev_num, 1);
