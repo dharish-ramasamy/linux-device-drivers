@@ -37,8 +37,11 @@ This work supports preparation for roles in:
 
 ## 🛠 Platform  
 - Embedded Linux  
-- Practice on platforms such as BeagleBone Black, Raspberry Pi, and QEMU (as applicable) </br></br>
+- Practice on platforms such as BeagleBone Black, Raspberry Pi, and QEMU (as applicable) 
 
+## ⚠️  Note
+This repository is strictly for **learning and practice purposes**.  
+Executable files and build artifacts are excluded using `.gitignore` to keep the repository clean and professional.</br></br>
 
 > Maintained by **Dharish Ramasamy**</br>
 > Embedded Software Engineer
